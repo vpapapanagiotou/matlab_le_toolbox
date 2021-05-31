@@ -7,7 +7,11 @@ function f = dftfreqs(n, fs)
     %
     %   Note - it is now compatible with fftshift.
     
-    m = floor(n / 2);
-    i = [0:m - 1, (m:n - 1) - n];
-    f = fs / 2 * i / m;
+    if rem(n, 2) == 1
+        m = floor(n / 2);
+        f = [0:m, -m:-1] / m * fs / 2;
+    else
+        m = floor(n / 2);
+        f = [0:m - 1, -m:-1] / m * fs / 2;
+    end
 end
