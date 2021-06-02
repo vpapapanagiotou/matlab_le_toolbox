@@ -1,14 +1,14 @@
 %% TEST 1
 
-fs = 10;
-n = 10;
+fs = 12;
+n = 3;
 x = dftfreqs(n, fs);
-e = sum(abs(x - [0, 1, 2, 3, 4, -5, -4, -3, -2, -1]))
+e = sum(abs(x - [0, 4, -4]))
 
 
 %% TEST 2
 
-fs = 8;
-n = 9;
+fs = 12;
+n = 4;
 x = dftfreqs(n, fs);
-e = sum(abs(x - [0, 1, 2, 3, 4, -4, -3, -2, -1]))
+e = sum(abs(x - [0, 3, -6, -3]))
