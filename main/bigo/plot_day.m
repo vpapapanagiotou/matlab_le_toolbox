@@ -32,9 +32,12 @@ function [hacc, hloc] = plot_day(user_path, day, day2, visible)
         hloc = [];
         return
     end
-    dev = read_devices_csv([user_path 'devices.csv']);
-    ses = read_sessions_csv([user_path 'sessions.csv']);
-    loc = read_location_csv([user_path 'location.csv']);
+    % dev = read_devices_csv([user_path 'devices.csv']);
+    % ses = read_sessions_csv([user_path 'sessions.csv']);
+    % loc = read_location_csv([user_path 'location.csv']);
+    dev = read_csv_force([user_path 'devices.csv']);
+    ses = read_csv_force([user_path 'sessions.csv']);
+    loc = read_csv_force([user_path 'location.csv']);
     
     % Time filtering (based on day and day2)
     b = day < ses.stop_local_timestamp & ses.start_local_timestamp < day2 + 1;
@@ -42,6 +45,11 @@ function [hacc, hloc] = plot_day(user_path, day, day2, visible)
     
     b = day <= loc.local_timestamp & loc.local_timestamp <= day2 + 1;
     loc = loc(b, :);
+    
+    % Location accuracy filtering
+    accuracy_threshold_m = 30;
+    b = loc.accuracy > accuracy_threshold_m;
+    loc(b, :) = [];
     
     %% Sensor plot    
     % Process each device
