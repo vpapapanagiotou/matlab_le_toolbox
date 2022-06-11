@@ -19,6 +19,8 @@ function [utc, lcl] = decode_iso8601_timestamp(t)
         end
     end
     
+    t0 = t;
+    
     t = remove_locale(t);
     
     [dt, tz] = split_datetime_timezone(t);

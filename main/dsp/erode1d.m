@@ -1,7 +1,7 @@
 function ye = erode1d(x, m, shift)
     %ERODE1D Erosion using a flat structure element
     %
-    %   ye = ERODE1D(x, m) erodes signal x with a structure elementn of
+    %   ye = ERODE1D(x, m) erodes signal x with a structure element of
     %   ones with length m.
     %
     %   ye = ERODE1D(x, m, shift) can change the default behaviour for

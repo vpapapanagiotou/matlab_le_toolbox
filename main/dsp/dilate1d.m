@@ -1,7 +1,7 @@
 function yd = dilate1d(x, m, shift)
-    %DILATE1d Dilation using a flat structure element
+    %DILATE1D Dilation using a flat structure element
     %
-    %   yd = DILATE1d(x, m) dilates signal x with a structure elementn of
+    %   yd = DILATE1D(x, m) dilates signal x with a structure element of
     %   ones with length m.
     %
     %   yd = DILATE1D(x, m, shift) can change the default behaviour for
