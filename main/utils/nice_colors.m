@@ -6,7 +6,7 @@ function rgb = nice_colors(clr)
         rgb = [0.8500 0.3250 0.0980];
     elseif strcmp(clr, 'yellow')
         rgb = [0.9290 0.6940 0.1250];
-    elseif strcmp(clr, 'magenda')
+    elseif strcmp(clr, 'magenta')
         rgb = [0.4940 0.1840 0.5560];
     elseif strcmp(clr, 'green')
         rgb = [0.4660 0.6740 0.1880];
